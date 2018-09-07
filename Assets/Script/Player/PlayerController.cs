@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     public float rayDistance;
 
     [Header("WEAPON")]
-    public Transform weapon;
+    public Weapon currentWeapon;
 
     
     void Start()
@@ -32,13 +32,19 @@ public class PlayerController : MonoBehaviour
         Ray groundRay = new Ray(transform.position, Vector3.down);
         if (Physics.Raycast(groundRay, out hit, rayDistance))
         {
-            return true; // is gorunded
+            return true; // Is gorunded
         }
-        return false; // not grounded
+        return false; // Not grounded
     }
     void Update()
     {
         Movement();
+        // If fire button And weapon is allowed to fire
+        if(Input.GetButton("Fire1"))
+        {
+            // Fire the weapon
+            currentWeapon.Attack();
+        }
     }
     public void Movement()
     {
@@ -58,23 +64,18 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {
-            // jump up
+            // Jump up
             force.y = jumpHeight;
         }
 
         rb.velocity = force;
-
-        //if(moveDir.magnitude > 0)
-        //{
-        //rotate player to move direction
-        //    transform.rotation = Quaternion.LookRotation(moveDir);
-        //}
+        
         Vector3 euler = Camera.main.transform.eulerAngles;
 
         Quaternion playerRotation = Quaternion.AngleAxis(camEuler.y, Vector3.up);
         Quaternion weaponRotation = Quaternion.AngleAxis(camEuler.x, Vector3.right);
 
-        weapon.localRotation = weaponRotation;
+        currentWeapon.transform.localRotation = weaponRotation;
         transform.rotation = playerRotation;
     }
 
