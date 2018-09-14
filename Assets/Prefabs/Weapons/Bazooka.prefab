@@ -313,9 +313,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e11638e4244cd484fbe8b25c70e69337, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 1476704276248936, guid: fcd23b4f28afbcb4d80e270a26b6ff5d, type: 2}
+  damage: 100
+  ammo: 30
+  accuracy: 1
+  range: 10
+  rateOfFire: 5
+  projectile: {fileID: 0}
   spawnPoint: {fileID: 4923065135407468}
-  fireButton: 323
 --- !u!136 &136630005619469688
 CapsuleCollider:
   m_ObjectHideFlags: 1

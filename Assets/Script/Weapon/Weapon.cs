@@ -12,17 +12,6 @@ public abstract class Weapon : MonoBehaviour
     public GameObject projectile;
     protected int currentAmmo = 0;
     public Transform spawnPoint;
-    /* Task 1     create a draw.io for the projectile system
-     * Details: projectile system needs the following structure
-     *                     Projectile
-     *                     /    |    \              
-     *                  Normal  Fire  Explosive
-     * Variables for each class
-     * Functions for each class
-     * 
-     * 
-     * Task 2). Player cannot shoot until the weapon is ready to fire
-     */
 
     public abstract void Attack();
 

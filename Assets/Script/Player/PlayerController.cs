@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
     {
         Movement();
         // If fire button And weapon is allowed to fire
-        if(Input.GetButton("Fire1"))
+        if(Input.GetButtonDown("Fire1"))
         {
             // Fire the weapon
             currentWeapon.Attack();
@@ -75,7 +75,7 @@ public class PlayerController : MonoBehaviour
         Quaternion playerRotation = Quaternion.AngleAxis(camEuler.y, Vector3.up);
         Quaternion weaponRotation = Quaternion.AngleAxis(camEuler.x, Vector3.right);
 
-        currentWeapon.transform.localRotation = weaponRotation;
+        //currentWeapon.transform.localRotation = weaponRotation;
         transform.rotation = playerRotation;
     }
 
