@@ -51,7 +51,7 @@ ParticleSystem:
   lengthInSec: 5
   simulationSpeed: 1
   stopAction: 0
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -230,7 +230,7 @@ ParticleSystem:
       maxColor: {r: 0.6698113, g: 0.6698113, b: 0.6698113, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.5951767, g: 1, b: 0, a: 1}
+        key0: {r: 1, g: 0.33765072, b: 0, a: 1}
         key1: {r: 0, g: 0.82417345, b: 1, a: 1}
         key2: {r: 1, g: 0.6687183, b: 0, a: 1}
         key3: {r: 1, g: 0, b: 0.52679205, a: 1}

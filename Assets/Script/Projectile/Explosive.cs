@@ -22,6 +22,7 @@ public class Explosive : Projectile
         Collider[] hits = Physics.OverlapSphere(transform.position, damageRadius);
         foreach(var hit in hits)
         {
+            Destroy(this.gameObject);
             Enemy e = hit.GetComponent<Enemy>();
             if(e)
             {
